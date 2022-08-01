@@ -1,5 +1,11 @@
 package com.sg.classroster;
 
-public class App {
+import com.sg.classroster.controller.ClassRosterController;
 
+public class App {
+	
+	public static void main(String[] args) {
+		ClassRosterController controller = new ClassRosterController();
+		controller.run();
+	}
 }
