@@ -1,5 +1,6 @@
 package com.sg.classroster.dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,17 +18,20 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
 
 	@Override
 	public List<Student> getAllStudents() {
-		throw new UnsupportedOperationException("Not supported yet");
+		// returns an ArrayList when List return type is declared
+		//perfectly fine because of inheritance
+		return new ArrayList<Student>(students.values());
 	}
 
 	@Override
 	public Student getStudent(String studentID) {
-		throw new UnsupportedOperationException("Not supported yet");
+		return students.get(studentID);
 	}
 
 	@Override
 	public Student removeStudent(String studentID) {
-		throw new UnsupportedOperationException("Not supported yet");
+		Student student = students.remove(studentID);
+		return student;
 	}
 
 	
