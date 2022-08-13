@@ -6,7 +6,11 @@ import com.sg.classroster.dto.Student;
 
 public class ClassRosterView {
 
-	private UserIO io = new UserIOConsoleImpl();
+	private UserIO io;
+	
+	public ClassRosterView(UserIO io) {
+		this.io = io;
+	}
 
 	public int printMenuAndGetSelection() {
 		io.print("Main Menu");
@@ -90,6 +94,11 @@ public class ClassRosterView {
 	}
 	public void displayUnknownCommandBanner() {
 		io.print("Unknown Command");
+	}
+	
+	public void displayErrorMessage(String errormsg) {
+		io.print("=== ERROR ===");
+		io.print(errormsg);
 	}
 	
 }
