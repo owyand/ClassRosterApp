@@ -40,7 +40,7 @@ public class ClassRosterView {
 		io.print("=== Create Student ===");
 	}
 
-	public void displayCreateSuccesssBanner() {
+	public void displayCreateSuccessBanner() {
 		io.readString("Student successfully create. Please hit continue");
 	}
 
