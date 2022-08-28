@@ -12,7 +12,7 @@ public interface ClassRosterDao {
 	 * 
 	 * @param studentID - id with which the student is to be associated
 	 * @param student   - student to be added to the roster
-	 * @return the Student object previouslyvassociated with the student id if it
+	 * @return the Student object previously associated with the student id if it
 	 *         exists, null otherwise
 	 */
 	Student addStudent(String studentID, Student student) throws ClassRosterPersistenceException;

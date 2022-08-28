@@ -17,8 +17,17 @@ import com.sg.classroster.dto.Student;
 public class ClassRosterDaoFileImpl implements ClassRosterDao {
 
 	final Map<String, Student> students = new HashMap<>();
-	public static final String ROSTER_FILE = "roster.txt";
+	public final String roster_file;
 	public static final String DELIMITER = "::";
+	
+	//two constructors one is the default general file that is used to run the program
+	public ClassRosterDaoFileImpl() {
+		roster_file = "roster.txt";
+	}
+	//this one is used to declare a new text file to use if we are testing have another user etc
+	public ClassRosterDaoFileImpl(String rosterTextFile) {
+		roster_file = rosterTextFile;
+	}
 
 	@Override
 	public Student addStudent(String studentID, Student student) throws ClassRosterPersistenceException {
@@ -75,7 +84,7 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
 		Scanner fromRoster = null;
 
 		try {
-			fromRoster = new Scanner(new BufferedReader(new FileReader(ROSTER_FILE)));
+			fromRoster = new Scanner(new BufferedReader(new FileReader(roster_file)));
 
 			String currentLine;
 			Student currentStudent;
@@ -105,7 +114,7 @@ public class ClassRosterDaoFileImpl implements ClassRosterDao {
 		PrintWriter out = null;
 
 		try {
-			out = new PrintWriter(new FileWriter(ROSTER_FILE));
+			out = new PrintWriter(new FileWriter(roster_file));
 			String studentAsText;
 			List<Student> studentList = new ArrayList<>(students.values());
 			for (Student currentStudent : studentList) {
