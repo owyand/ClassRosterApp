@@ -1,2 +1,2 @@
 # ClassRosterApp
-an app which interacts with the user through the console and stores data in a file. It includes a menu of options and can manipulate, add, delete Student objects and their respective information
+an app which interacts with the user through the console and stores data in a file. It includes a menu of options and can manipulate, add, delete Student objects and their respective information. It was designed using an Agile approach and an MVC design. It has also been tested using JUnit. The idea for this app is to assist a teacher or administrator with the creation, reading, updating, and deletion of student information (CRUD) while documenting in file the students information.
